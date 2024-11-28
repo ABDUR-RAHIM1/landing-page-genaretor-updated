@@ -64,15 +64,13 @@
     @apply capitalize font-medium text-[16px] inline-block w-full py-3 px-2 duration-200 bg-gray-300 text-center rounded-md
   }
 
-  /* .sidebar{
-  @apply bg-gray-200
-} */
+
   .formSection {
-    @apply p-2 my-4 border
+    @apply p-2 my-4 border 
   }
 
   .formWrapper {
-    @apply py-5 px-3 my-5 bg-gray-100 rounded-md
+    @apply py-5 px-3 my-5 bg-white rounded-md shadow-lg
   }
 
   .formGroup {
@@ -83,6 +81,9 @@
     @apply h-[100px]
   }
 
+
+
+  
   /*  dashboard end */
 
   /*  demo page start */

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaBars, FaTimes } from 'react-icons/fa';
 import { formContext } from '../../ContextApi/ContextApi';
 import {
   MdDashboard,
@@ -62,10 +62,13 @@ export default function DashboardLayout({ children }) {
       <header className='sticky top-0 w-full bg-gray-800 text-white flex justify-between items-center px-6 py-4 shadow-md z-[1000]'>
         <div className='flex items-center'>
           <h1 className='text-2xl font-semibold'>Dashboard</h1>
-          <FaArrowAltCircleRight
-            onClick={handleShowSidebar}
-            className={` ${show ? " rotate-180" : " rotate-0"} duration-300 text-3xl cursor-pointer ml-4 text-orange-500`}
-          />
+          <div onClick={handleShowSidebar} className="ml-4 cursor-pointer">
+            {show ? (
+              <FaTimes className='text-3xl text-orange-500 duration-300 transform rotate-180' />
+            ) : (
+              <FaBars className='text-3xl text-orange-500 duration-300 transform rotate-0' />
+            )}
+          </div>
         </div>
 
         <div className='flex items-center gap-4'>
@@ -80,8 +83,8 @@ export default function DashboardLayout({ children }) {
       <div className='relative h-screen'>
         {/* Sidebar */}
         <aside
-          className={`fixed top-[64px] left-0 h-[calc(100%-64px)] w-[250px] bg-white shadow-2xl z-50 transform ${show ? 'translate-x-0' : '-translate-x-full'
-            } transition-transform duration-300`}
+          className={`fixed top-[64px] left-0 h-[calc(100%-64px)] w-[250px] bg-white  z-50 transform ${show ? 'translate-x-0 shadow-2xl ' : '-translate-x-full shadow-none'
+            } transition-transform duration-300 overflow-y-auto py-5 md:py-0`}
         >
           <div className='border-b border-gray-300 pb-6 mb-8 text-center pt-8'>
             <h4 className='text-2xl font-semibold text-gray-700 flex gap-2 justify-center items-center'>
@@ -107,10 +110,12 @@ export default function DashboardLayout({ children }) {
               </Link>
             ))}
 
+            <div className=' my-10'></div>
+
             {/* Logout Button */}
             <button
               onClick={handleLogOut}
-              className='w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white rounded-md mt-6 shadow-md hover:shadow-lg flex items-center gap-4 transition duration-300'
+              className='w-full py-3 px-4  bg-red-600 hover:bg-red-700 text-white rounded-md mt-6 shadow-md hover:shadow-lg flex items-center gap-4 transition duration-300'
             >
               <MdLogout className='text-xl' />
               Log out

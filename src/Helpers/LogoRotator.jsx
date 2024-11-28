@@ -12,12 +12,12 @@ export default function LogoRotator({ images }) {
 
         return () => clearInterval(intervalId);
     }, [images]);
-
+   
     return (
         <img
             src={images[currentImageIndex]}
             alt="Logo"
-            className=' w-full h-[150px] rounded-full'
+            className=' w-full h-full rounded-full'
         />
     );
 }

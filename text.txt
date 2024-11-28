@@ -1,2 +1,7 @@
 email : abdurrahim@gdmail.com
 pass  : 1111
+
+
+simple task -> 
+1 . order schema te status add kora (order pending , proccesing , delivery , etc)
+2 . order page a delete button add , jekono time a order delete kora jabe 

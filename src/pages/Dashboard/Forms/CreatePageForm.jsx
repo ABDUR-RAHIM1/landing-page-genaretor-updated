@@ -15,7 +15,9 @@ export default function CreatePageForm() {
 
 
     return (
-        <form onSubmit={handleCreatePage}>
+        <form onSubmit={handleCreatePage}
+          className=' bg-gray-100'
+        >
             {/*  first section */}
 
             <HeroForm />
@@ -25,7 +27,7 @@ export default function CreatePageForm() {
             <SubProductForm />
             <ReviewForm />
 
-            <button className=' button w-full bg-orange-600 text-white'>
+            <button className=' button w-full bg-orange-600 shadow-2xl hover:bg-orange-700 text-white'>
                 {
                     loading ? <Spinner /> : "Publish Page"
                 }

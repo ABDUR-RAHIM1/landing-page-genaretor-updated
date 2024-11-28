@@ -23,22 +23,15 @@ export default function HeroForm() {
 
     const gradientTypes = [
         "linear-gradient",
-        "radial-gradient",
-        "conic-gradient",
-        "repeating-linear-gradient",
-        "repeating-radial-gradient",
+        "radial-gradient"
     ];
 
     return (
         <div className='formWrapper'>
             <FormTitle text={"Hero"} />
 
-
-
             <div className="formSection">
                 <div className="formGroup">
-
-
 
                     <InputField
                         label={imgLoading ? "Uplaoding . . . " : "Add logo"}
